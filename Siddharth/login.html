@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - FlowerVerse</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to right, #ffecd2, #fcb69f);
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            padding: 40px 0;
+        }
+        .login-container {
+            max-width: 400px;
+            margin: auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .login-container h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ff6f61;
+        }
+        .form-group input {
+            height: 45px;
+            border-radius: 5px;
+        }
+        .btn-custom {
+            background-color: #ff6f61;
+            color: white;
+            border-radius: 5px;
+            height: 45px;
+        }
+        .btn-custom:hover {
+            background-color: #e55a4f;
+        }
+        .text-center a {
+            color: #ff6f61;
+        }
+        .text-center a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-container">
+        <h2>Login to FlowerVerse</h2>
+        <form id="loginForm" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" placeholder="Enter email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" id="password" placeholder="Password" required minlength="6">
+            </div>
+            <button type="submit" class="btn btn-custom btn-block">Login</button>
+            <div class="text-center mt-3">
+                <a href="#">Forgot password?</a>
+            </div>
+            <div class="text-center mt-2">
+                <a href="Registration.html">Don't have an account? Sign up</a>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            const email = document.getElementById("email").value;
+            const password = document.getElementById("password").value;
+
+            // Simple email validation
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if (!emailPattern.test(email)) {
+                alert("Please enter a valid email address.");
+                return false;
+            }
+
+            // Password validation
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters long.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>function validateForm() {
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    // Simple email validation
+    const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    if (!emailPattern.test(email)) {
+        alert("Please enter a valid email address.");
+        return false;
+    }
+
+    // Password validation
+    if (password.length < 6) {
+        alert("Password must be at least 6 characters long.");
+        return false;
+    }
+
+    // If validation passes, redirect to the home page
+    window.location.href = "home.html"; // Replace "HomePage.html" with the actual home page file
+    return false; // Prevent form submission to keep the user on the same page for redirection
+}
+</script>
+
+</body>
+</html>

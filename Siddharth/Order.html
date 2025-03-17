@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Delivery - Flower Verse</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to right, #f9f9f9, #e1e1e1);
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            padding-top: 70px;
+        }
+
+        .navbar {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar-brand img {
+            max-height: 50px;
+        }
+
+        .header {
+            background-color: #c6e2ff;
+            padding: 40px 0;
+            text-align: center;
+            color: #333;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .header h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+
+        .container {
+            margin-top: 30px;
+        }
+
+        .order-form {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+        }
+
+        .form-control {
+            border-radius: 10px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(to right, #c2e9fb, #a1c4fd);
+        }
+
+        footer {
+            background-color: #c6e2ff;
+            color: #333;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="Logo.jpg" alt="Flower Verse Logo"> <!-- Logo image here -->
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="OgFlwr.html">Original Flowers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Duplicat.html">Duplicate Flowers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="DirectPlant.html">Direct Plants</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Book.html">Book of Flowers</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="Order.html">Flower Delivery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="header">
+        <h1>Flower Delivery</h1>
+        <p>Order your favorite flowers and have them delivered to your doorstep</p>
+    </header>
+
+    <div class="container">
+        <div class="order-form">
+            <h2 class="mb-4">Place Your Order</h2>
+            <form id="orderForm">
+                <div class="form-group">
+                    <label for="customerName">Full Name</label>
+                    <input type="text" class="form-control" id="customerName" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="customerEmail">Email Address</label>
+                    <input type="email" class="form-control" id="customerEmail" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="customerPhone">Phone Number</label>
+                    <input type="tel" class="form-control" id="customerPhone" placeholder="Enter your phone number" required>
+                </div>
+                <div class="form-group">
+                    <label for="deliveryAddress">Delivery Address</label>
+                    <input type="text" class="form-control" id="deliveryAddress" placeholder="Enter delivery address" required>
+                </div>
+                <div class="form-group">
+                    <label for="flowerSelection">Select Flower</label>
+                    <select class="form-control" id="flowerSelection" required>
+                        <option value="" disabled selected>Select a flower</option>
+                        <option value="rose" data-price="15">Rose - $15</option>
+                        <option value="tulip" data-price="10">Tulip - $10</option>
+                        <option value="orchid" data-price="20">Orchid - $20</option>
+                        <option value="sunflower" data-price="12">Sunflower - $12</option>
+                        <option value="lily" data-price="18">Lily - $18</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="flowerQuantity">Quantity</label>
+                    <input type="number" class="form-control" id="flowerQuantity" min="1" value="1" required>
+                </div>
+                <div class="form-group">
+                    <label for="totalAmount">Total Amount</label>
+                    <input type="text" class="form-control" id="totalAmount" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="deliveryDateTime">Select Delivery Date & Time</label>
+                    <input type="datetime-local" class="form-control" id="deliveryDateTime" required>
+                </div>
+                <div class="form-group">
+                    <label for="paymentMethod">Payment Method</label>
+                    <select class="form-control" id="paymentMethod" required>
+                        <option value="" disabled selected>Select a payment method</option>
+                        <option value="cod">Cash on Delivery</option>
+                        <option value="upi">UPI</option>
+                        <option value="netbanking">Net Banking</option>
+                        <option value="card">Credit/Debit Card</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary mt-4">Place Order</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Flower Verse. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const flowerSelection = document.getElementById('flowerSelection');
+        const flowerQuantity = document.getElementById('flowerQuantity');
+        const totalAmount = document.getElementById('totalAmount');
+
+        function calculateTotal() {
+            const selectedOption = flowerSelection.options[flowerSelection.selectedIndex];
+            const pricePerFlower = parseInt(selectedOption.getAttribute('data-price'));
+            const quantity = parseInt(flowerQuantity.value);
+            const total = pricePerFlower * quantity;
+            totalAmount.value = '$' + total;
+        }
+
+        flowerSelection.addEventListener('change', calculateTotal);
+        flowerQuantity.addEventListener('input', calculateTotal);
+
+        document.getElementById('orderForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            alert('Your order has been placed successfully!');
+        });
+
+        // Set min date and time for delivery
+        const deliveryDateTime = document.getElementById('deliveryDateTime');
+        const now = new Date().toISOString().slice(0, 16);
+        deliveryDateTime.min = now;
+    </script>
+</body>
+
+</html>

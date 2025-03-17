@@ -1,0 +1,14 @@
+.flower-item {
+    width: calc(45% - 30px); /* Increase the width of each item */
+}
+
+.flower-item img {
+    max-width: 80%; /* Increase the max width of images */
+}
+
+.flower-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Space out the items evenly */
+    max-width: 100%; /* Ensure the list takes up the full width */
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Verse - Catalog</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 56px;
+            background-color: #f3e6f5;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+        }
+        .btn-primary {
+            background: linear-gradient(to right, #ff9a9e, #fecfef);
+            border: none;
+        }
+        .btn-primary:hover {
+            background: linear-gradient(to right, #fecfef, #ff9a9e);
+        }
+        header {
+            background: linear-gradient(to right, #a18cd1, #fbc2eb);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        footer {
+            background-color: #f7f1fa;
+            color: #333;
+            padding: 20px 0;
+            text-align: center;
+        }
+        .table {
+            background-color: #fff;
+            border: 1px solid #dedede;
+        }
+        .table th {
+            background-color: #f7f1fa;
+            color: #4a4a4a;
+        }
+        .table td a {
+            text-decoration: none;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            background: linear-gradient(to right, #ff9a9e, #fecfef);
+        }
+        .table td a:hover {
+            background: linear-gradient(to right, #fecfef, #ff9a9e);
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="home.html">
+                <img src="../Logo.jpg" alt="FlowerVerse Logo" style="height: 50px; border-radius: 15px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../OgFlwr.html">Original Flowers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Duplicate.html">Duplicate Flowers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="DirectPlant.html">Direct Plants</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Book.html">Book of Flowers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Order.html">Flower Delivery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="catalog.html">Flower Catalog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <h1>Flower Catalog</h1>
+        <p>Browse our complete collection of flowers and plants.</p>
+    </header>
+
+    <section class="py-5">
+        <div class="container">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>Link</th>
+                    </tr>
+                </thead>
+                <tbody id="flowerCatalog">
+                    <!-- Flower data will be populated here -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2024 Flower Verse. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Fetch and display flower data in a table
+        fetch('flowers.json')
+            .then(response => response.json())
+            .then(data => {
+                const tbody = document.getElementById('flowerCatalog');
+                data.forEach(flower => {
+                    const row = `
+                        <tr>
+                            <td>${flower.name}</td>
+                            <td>${flower.description}</td>
+                            <td><a href="${flower.link}">View More</a></td>
+                        </tr>
+                    `;
+                    tbody.innerHTML += row;
+                });
+            })
+            .catch(error => console.error('Error fetching flower data:', error));
+    </script>
+</body>
+</html>

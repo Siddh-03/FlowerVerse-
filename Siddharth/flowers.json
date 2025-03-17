@@ -1,0 +1,62 @@
+[
+    {
+        "name": "Rose",
+        "description": "Classic red roses symbolizing love and affection.",
+        "image": "../images/rose.jpg",
+        "link": "../OgFlwr.html"
+    },
+    {
+        "name": "Silk Lily",
+        "description": "Elegant artificial lilies for everlasting beauty.",
+        "image": "../images/silk-lily.jpg",
+        "link": "Duplicate.html"
+    },
+    {
+        "name": "Sunflower",
+        "description": "Bright and cheerful sunflowers for any garden.",
+        "image": "../images/sunflower.jpg",
+        "link": "DirectPlant.html"
+    },
+    {
+        "name": "Tulip",
+        "description": "Vibrant tulips in various colors for spring vibes.",
+        "image": "../images/tulip.jpg",
+        "link": "../OgFlwr.html"
+    },
+    {
+        "name": "Orchid",
+        "description": "Exotic orchids perfect for sophisticated displays.",
+        "image": "../images/orchid.jpg",
+        "link": "../OgFlwr.html"
+    },
+    {
+        "name": "Faux Peony",
+        "description": "Realistic artificial peonies for decor.",
+        "image": "../images/faux-peony.jpg",
+        "link": "Duplicate.html"
+    },
+    {
+        "name": "Daisy",
+        "description": "Simple yet charming daisies for natural beauty.",
+        "image": "../images/daisy.jpg",
+        "link": "DirectPlant.html"
+    },
+    {
+        "name": "Lavender",
+        "description": "Fragrant lavender plants for relaxation.",
+        "image": "../images/lavender.jpg",
+        "link": "DirectPlant.html"
+    },
+    {
+        "name": "Silk Rose",
+        "description": "Lifelike silk roses that never fade.",
+        "image": "../images/silk-rose.jpg",
+        "link": "Duplicate.html"
+    },
+    {
+        "name": "Marigold",
+        "description": "Golden marigolds for vibrant gardens.",
+        "image": "../images/marigold.jpg",
+        "link": "../OgFlwr.html"
+    }
+]

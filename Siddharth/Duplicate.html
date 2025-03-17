@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duplicate Flowers - Flower Verse</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to right, #ffecd2, #fcb69f);
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            padding-top: 100px; /* Increased padding-top to accommodate the fixed navbar */
+        }
+
+        .navbar {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar-brand img {
+            max-height: 50px; /* Adjust based on logo size */
+        }
+
+        .header {
+            background-color: #e55a4f;
+            padding: 40px 0;
+            text-align: center;
+            color: white;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .header h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+
+        .container {
+            margin-top: 30px;
+        }
+
+        .card {
+            transition: transform 0.2s;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .card-img-top {
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            object-fit: cover;
+            height: 200px;
+            width: 100%;
+        }
+
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            padding: 20px;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-text {
+            flex-grow: 1;
+        }
+
+        .btn-primary {
+            background: linear-gradient(to right, #ff9a9e, #fecfef);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(to right, #fecfef, #ff9a9e);
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        footer {
+            background-color: #e55a4f;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="Logo.jpg" alt="Flower Verse Logo"> <!-- Logo image here -->
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="OgFlwr.html">Original Flowers</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="Duplicate.html">Duplicate Flowers</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="DirectPlant.html">Direct Plants</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Book.html">Book of Flowers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Order.html">Flower Delivery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="header">
+        <h1>Duplicate Flowers</h1>
+        <p>Discover high-quality artificial flowers for every occasion</p>
+    </header>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-4"> <!-- Add mb-4 to provide space between rows -->
+                <div class="card">
+                    <img src="Sirose.jpg" class="card-img-top" alt="Silk Rose">
+                    <div class="card-body">
+                        <h5 class="card-title">Silk Rose</h5>
+                        <p class="card-text">A beautiful, long-lasting alternative to fresh roses.</p>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#orderModal">Order Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="ArtTulip.jpg" class="card-img-top" alt="Artificial Tulip">
+                    <div class="card-body">
+                        <h5 class="card-title">Artificial Tulip</h5>
+                        <p class="card-text">Brighten up any space with these vibrant artificial tulips.</p>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#orderModal">Order Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="ArtOrchid.jpg" class="card-img-top" alt="Plastic Orchid">
+                    <div class="card-body">
+                        <h5 class="card-title">Plastic Orchid</h5>
+                        <p class="card-text">Elegant and exotic, perfect for special moments.</p>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#orderModal">Order Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Modal -->
+    <div class="modal fade" id="orderModal" tabindex="-1" aria-labelledby="orderModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="orderModalLabel">Order Form</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="orderForm" novalidate>
+                        <div class="mb-3">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" class="form-control" id="name" required>
+                            <div class="invalid-feedback">
+                                Please enter your name.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="email" required>
+                            <div class="invalid-feedback">
+                                Please enter a valid email address.
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="address" class="form-label">Address</label>
+                            <textarea class="form-control" id="address" rows="3" required></textarea>
+                            <div class="invalid-feedback">
+                                Please enter your address.
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit Order</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Flower Verse. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Bootstrap form validation
+        (function () {
+            'use strict'
+            var forms = document.querySelectorAll('.needs-validation')
+            Array.prototype.slice.call(forms).forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+
+        // Custom form validation
+        document.getElementById('orderForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+            var form = event.target;
+            if (!form.checkValidity()) {
+                event.stopPropagation();
+            } else {
+                alert('Order placed successfully!');
+                form.reset();
+                var modal = bootstrap.Modal.getInstance(document.getElementById('orderModal'));
+                modal.hide();
+            }
+            form.classList.add('was-validated');
+        });
+    </script>
+</body>
+
+</html>

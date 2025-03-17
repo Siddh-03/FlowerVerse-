@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book of Flowers - Flower Verse</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to right, #f9f9f9, #e1e1e1);
+            font-family: 'Arial', sans-serif;
+            color: #333;
+            padding-top: 70px; /* Adjusted for fixed navbar */
+        }
+
+        .navbar {
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar-brand img {
+            max-height: 50px; /* Adjust based on logo size */
+        }
+
+        .header {
+            background-color: #f7c6c7;
+            padding: 40px 0;
+            text-align: center;
+            color: #333;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .header h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+
+        .container {
+            margin-top: 30px;
+        }
+
+        .search-bar {
+            margin-bottom: 30px;
+        }
+
+        .card {
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .btn-primary {
+            background: linear-gradient(to right, #ff9a9e, #fecfef);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(to right, #fecfef, #ff9a9e);
+        }
+
+        footer {
+            background-color: #f7c6c7;
+            color: #333;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 30px;
+        }
+
+        .example-section {
+            background-color: #e3f2fd;
+            padding: 40px 0;
+            margin-top: 40px;
+        }
+
+        .example-section h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 36px;
+            color: #333;
+        }
+
+        .example-section .card img {
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .d-none {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="Logo.jpg" alt="Flower Verse Logo"> <!-- Logo image here -->
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="OgFlwr.html">Original Flowers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Duplicate.html">Duplicate Flowers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="DirectPlant.html">Direct Plants</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="Book.html">Book of Flowers</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Order.html">Flower Delivery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="Contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="header">
+        <h1>Book of Flowers</h1>
+        <p>Explore detailed information about various flowers</p>
+    </header>
+
+    <div class="container">
+        <div class="search-bar">
+            <div class="input-group">
+                <input type="text" class="form-control" id="searchInput" placeholder="Search for a flower..." aria-label="Search for a flower">
+                <button class="btn btn-primary" id="searchButton">Search</button>
+            </div>
+        </div>
+
+        <div id="flowerDetails" class="card d-none">
+            <img id="flowerImage" class="card-img-top" src="" alt="Flower Image">
+            <div class="card-body">
+                <h5 class="card-title" id="flowerName"></h5>
+                <p class="card-text"><strong>Pros:</strong> <span id="flowerPros"></span></p>
+                <p class="card-text"><strong>Cons:</strong> <span id="flowerCons"></span></p>
+                <p class="card-text"><strong>Growth Regions:</strong> <span id="flowerRegions"></span></p>
+                <p class="card-text"><strong>Worldwide Known Name:</strong> <span id="flowerKnownName"></span></p>
+                <p class="card-text"><strong>Available Colors:</strong> <span id="flowerColors"></span></p>
+            </div>
+        </div>
+    </div>
+
+    <section class="example-section">
+        <div class="container">
+            <h2>Do you Know About Flowers?</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card example-card" data-flower="Rose">
+                        <img src="Brose.jpg" class="card-img-top" alt="Rose">
+                        <div class="card-body">
+                            <h5 class="card-title">Rose</h5>
+                            <p class="card-text">Rosa - Beautiful and widely loved flower.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card example-card" data-flower="Tulip">
+                        <img src="BTulip.jpg" class="card-img-top" alt="Tulip">
+                        <div class="card-body">
+                            <h5 class="card-title">Tulip</h5>
+                            <p class="card-text">Tulipa - Vibrant and easy to grow.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card example-card" data-flower="Orchid">
+                        <img src="Borchid.jpg" class="card-img-top" alt="Orchid">
+                        <div class="card-body">
+                            <h5 class="card-title">Orchid</h5>
+                            <p class="card-text">Orchidaceae - Exotic and long-lasting blooms.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Additional Flower Cards -->
+                <div class="col-md-4 mb-4">
+                    <div class="card example-card" data-flower="Sunflower">
+                        <img src="Bsunflower.jpg" class="card-img-top" alt="Sunflower">
+                        <div class="card-body">
+                            <h5 class="card-title">Sunflower</h5>
+                            <p class="card-text">Helianthus - Bright and cheerful flower.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card example-card" data-flower="Lily">
+                        <img src="Blily.jpg" class="card-img-top" alt="Lily">
+                        <div class="card-body">
+                            <h5 class="card-title">Lily</h5>
+                            <p class="card-text">Lilium - Elegant and fragrant bloom.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card example-card" data-flower="Daisy">
+                        <img src="Bdaisy.jpg" class="card-img-top" alt="Daisy">
+                        <div class="card-body">
+                            <h5 class="card-title">Daisy</h5>
+                            <p class="card-text">Bellis - Simple and innocent charm.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card example-card" data-flower="Lavender">
+                        <img src="Blavender.jpg" class="card-img-top" alt="Lavender">
+                        <div class="card-body">
+                            <h5 class="card-title">Lavender</h5>
+                            <p class="card-text">Lavandula - Soothing and fragrant herb.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card example-card" data-flower="Daffodil">
+                        <img src="Bdaffodil.jpg" class="card-img-top" alt="Daffodil">
+                        <div class="card-body">
+                            <h5 class="card-title">Daffodil</h5>
+                            <p class="card-text">Narcissus - Bright and early spring bloom.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card example-card" data-flower="Peony">
+                        <img src="Bpeony.jpg" class="card-img-top" alt="Peony">
+                        <div class="card-body">
+                            <h5 class="card-title">Peony</h5>
+                            <p class="card-text">Paeonia - Lush and large, vibrant petals.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card example-card" data-flower="Marigold">
+                        <img src="Bmarigold.jpg" class="card-img-top" alt="Marigold">
+                        <div class="card-body">
+                            <h5 class="card-title">Marigold</h5>
+                            <p class="card-text">Tagetes - Bright and hardy bloom.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Flower Verse. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const flowerData = {
+            "Rose": {
+                pros: "Beautiful, widely loved, diverse colors.",
+                cons: "Thorns, requires frequent watering.",
+                regions: "Asia, Europe, North America.",
+                knownName: "Rosa",
+                colors: "Red, Pink, White, Yellow",
+                image: "Brose.jpg"
+            },
+            "Tulip": {
+                pros: "Vibrant colors, easy to grow.",
+                cons: "Short blooming period.",
+                regions: "Europe, Asia.",
+                knownName: "Tulipa",
+                colors: "Red, Yellow, Pink, Purple",
+                image: "BTulip.jpg"
+            },
+            "Orchid": {
+                pros: "Exotic, long-lasting blooms.",
+                cons: "Requires specific care.",
+                regions: "Tropical regions worldwide.",
+                knownName: "Orchidaceae",
+                colors: "White, Pink, Purple",
+                image: "Borchid.jpg"
+            },
+            "Sunflower": {
+                pros: "Bright and cheerful, attracts pollinators.",
+                cons: "Can grow very tall, may require staking.",
+                regions: "North America, Europe.",
+                knownName: "Helianthus",
+                colors: "Yellow, Orange",
+                image: "Bsunflower.jpg"
+            },
+            "Lily": {
+                pros: "Elegant, fragrant bloom, wide variety.",
+                cons: "Can be toxic to pets.",
+                regions: "Asia, Europe, North America.",
+                knownName: "Lilium",
+                colors: "White, Pink, Yellow, Orange",
+                image: "Blily.jpg"
+            },
+            "Daisy": {
+                pros: "Simple charm, easy to grow.",
+                cons: "Can spread easily.",
+                regions: "Europe, Asia, North America.",
+                knownName: "Bellis",
+                colors: "White, Pink, Yellow",
+                image: "Bdaisy.jpg"
+            },
+            "Lavender": {
+                pros: "Soothing fragrance, attracts pollinators.",
+                cons: "Requires well-drained soil.",
+                regions: "Mediterranean, Middle East.",
+                knownName: "Lavandula",
+                colors: "Purple, Blue",
+                image: "Blavender.jpg"
+            },
+            "Daffodil": {
+                pros: "Bright, early spring bloom, low maintenance.",
+                cons: "Short blooming period.",
+                regions: "Europe, North Africa.",
+                knownName: "Narcissus",
+                colors: "Yellow, White",
+                image: "Bdaffodil.jpg"
+            },
+            "Peony": {
+                pros: "Lush, large blooms, vibrant petals.",
+                cons: "Can be heavy and require support.",
+                regions: "Asia, Europe, North America.",
+                knownName: "Paeonia",
+                colors: "Pink, Red, White",
+                image: "Bpeony.jpg"
+            },
+            "Marigold": {
+                pros: "Bright, hardy bloom, pest deterrent.",
+                cons: "Can be prone to powdery mildew.",
+                regions: "Mexico, South America.",
+                knownName: "Tagetes",
+                colors: "Yellow, Orange, Red",
+                image: "Bmarigold.jpg"
+            }
+        };
+
+        document.querySelectorAll('.example-card').forEach(card => {
+            card.addEventListener('click', function () {
+                const flower = flowerData[this.getAttribute('data-flower')];
+
+                if (flower) {
+                    document.getElementById('flowerName').innerText = this.getAttribute('data-flower');
+                    document.getElementById('flowerPros').innerText = flower.pros;
+                    document.getElementById('flowerCons').innerText = flower.cons;
+                    document.getElementById('flowerRegions').innerText = flower.regions;
+                    document.getElementById('flowerKnownName').innerText = flower.knownName;
+                    document.getElementById('flowerColors').innerText = flower.colors;
+                    document.getElementById('flowerImage').src = flower.image;
+                    document.getElementById('flowerDetails').classList.remove('d-none');
+
+                    // Hide other cards
+                    document.querySelectorAll('.example-card').forEach(otherCard => {
+                        otherCard.parentElement.classList.add('d-none');
+                    });
+                }
+            });
+        });
+
+        document.getElementById('searchButton').addEventListener('click', function () {
+            const searchInput = document.getElementById('searchInput').value.trim();
+            const flower = flowerData[searchInput];
+
+            if (flower) {
+                document.getElementById('flowerName').innerText = searchInput;
+                document.getElementById('flowerPros').innerText = flower.pros;
+                document.getElementById('flowerCons').innerText = flower.cons;
+                document.getElementById('flowerRegions').innerText = flower.regions;
+                document.getElementById('flowerKnownName').innerText = flower.knownName;
+                document.getElementById('flowerColors').innerText = flower.colors;
+                document.getElementById('flowerImage').src = flower.image;
+                document.getElementById('flowerDetails').classList.remove('d-none');
+
+                // Show all cards when using the search bar
+                document.querySelectorAll('.example-card').forEach(card => {
+                    card.parentElement.classList.remove('d-none');
+                });
+            } else {
+                alert('Flower not found.');
+                document.getElementById('flowerDetails').classList.add('d-none');
+            }
+        });
+    </script>
+</body>
+
+</html>

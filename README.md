@@ -1,7 +1,5 @@
 # FlowerVerse: A Floral Website
 
-**[Live Demo](https://your-live-demo-link-here.com)** 🚀
-
 A beautiful and responsive multi-page website designed for a floral business. Developed as a 3rd-semester college project, FlowerVerse showcases a strong understanding of front-end fundamentals, responsive design principles, and the effective use of the Bootstrap framework.
 
 ---
